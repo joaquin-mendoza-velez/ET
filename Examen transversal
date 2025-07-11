@@ -1,0 +1,65 @@
+productos ={'8475HD': ['HP', 15.6, '8GB', 'DD', '1T', 'Intel Core i5', 'Nvidia GTX1050'], 
+'2175HD': ['lenovo', 14, '4GB', 'SSD', '512GB', 'Intel Core i5', 'Nvidia GTX1050'], 
+'JjfFHD': ['Asus', 14, '16GB', 'SSD', '256GB', 'Intel Core i7', 'Nvidia RTX2080Ti'], 
+'fgdxFHD': ['HP', 15.6, '8GB', 'DD', '1T', 'Intel Core i3', 'integrada'], 
+'GF75HD': ['Asus', 15.6, '8GB', 'DD', '1T', 'Intel Core i7', 'Nvidia GTX1050'], 
+'123FHD': ['lenovo', 14, '6GB', 'DD', '1T', 'AMD Ryzen 5', 'integrada'], 
+'342FHD': ['lenovo', 15.6, '8GB', 'DD', '1T', 'AMD Ryzen 7', 'Nvidia GTX1050'], 
+'UWU131HD': ['Dell', 15.6, '8GB', 'DD', '1T', 'AMD Ryzen 3', 'Nvidia GTX1050'],}
+stock={'8475HD': [387990,10], '2175HD': [327990,4], 'JjfFHD': [424990,1], 
+'fgdxFHD': [664990,21], '123FHD': [290890,32], '342FHD': [444990,7], 
+'GF75HD': [749990,2], 'UWU131HD': [349990,1], 'FS1230HD': [249990,0],}  
+def menu():
+    while True:
+        print('''*** MENU PRINCIPAL *** 
+1.Stock marca. 
+2.Búsqueda por precio. 
+3.Actualizar precio. 
+4.Salir.''')
+        try:opc=int(input('Ingrese su opcion'))
+        except ValueError:
+            print('Debe ingresar un numero entero')
+            continue
+        if opc == 1:stock_pormarca()
+        elif opc ==2:busqueda_por_precio()
+        elif opc ==3:actualizar_precio()
+        elif opc ==4:
+            print('programa finalizado')
+            break
+        else:print('Seleccione una opcion valida')
+def stock_pormarca():
+    marca=input('Ingrese la marca a buscar')
+    total=0
+    for marca, datos in productos.items():
+        if datos and datos[0].lower() == marca:
+            total +=stock.get(marca,[0,0])[1]
+            print(f'stock total del producto"{marca}":{total}')
+            return
+def busqueda_por_precio():
+    try:
+        precio1=int(input('Ingrese precio mínimo'))
+        precio2=int(input('Ingrese precio maximo'))
+    except ValueError:
+        print('Debe ingresar numeros enteros')
+        return
+    for precio1,precio2 in stock.items():
+        stock[precio1,precio2]
+        print(stock)
+        print(stock['8475HD'])
+        print(stock['8475HD'][387990,10])
+        return
+def actualizar_precio():
+    modelo=(input('Ingrese modelo a actualizar')).strip().lower()
+    for keys in stock:
+        stock[modelo]
+        try:nuevoprecio=int(input('ingrese el nuevo precio'))
+        except ValueError:
+            print('Debe ingresar numeros enteros')
+            return
+        nuevoprecio in modelo[0]
+        print(f'Precio actualizado!!')
+        print(f'el precio es:${nuevoprecio}')   
+        return
+
+if__name__=+"__main__"
+menu() 
